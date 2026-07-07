@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="avatarGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00AEC7"/>
+      <stop offset="100%" stop-color="#0098AE"/>
+    </linearGradient>
+  </defs>
+  <!-- Circle background -->
+  <circle cx="24" cy="24" r="22" fill="url(#avatarGrad)" opacity="0.12"/>
+  <circle cx="24" cy="24" r="22" stroke="url(#avatarGrad)" stroke-width="1.5" opacity="0.3"/>
+  <!-- Head -->
+  <circle cx="24" cy="18" r="7" fill="url(#avatarGrad)" opacity="0.7"/>
+  <!-- Body / shoulders -->
+  <path d="M12 38c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="url(#avatarGrad)" opacity="0.5"/>
+  <!-- Small teal accent dot -->
+  <circle cx="24" cy="44" r="2" fill="url(#avatarGrad)"/>
+</svg>

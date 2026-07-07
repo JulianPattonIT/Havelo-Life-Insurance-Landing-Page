@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" fill="none">
+  <defs>
+    <!-- Premium gradients -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0f5ff"/>
+      <stop offset="50%" stop-color="#fafcff"/>
+      <stop offset="100%" stop-color="#e8f0fe"/>
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2a4a"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="warmGlow" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="heroShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="rgba(30,58,95,0.12)"/>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="520" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Subtle background pattern - concentric rings -->
+  <circle cx="400" cy="290" r="240" stroke="#2563eb" stroke-width="1" opacity="0.04" fill="none"/>
+  <circle cx="400" cy="290" r="200" stroke="#2563eb" stroke-width="1" opacity="0.06" fill="none"/>
+  <circle cx="400" cy="290" r="160" stroke="#2563eb" stroke-width="1" opacity="0.08" fill="none"/>
+
+  <!-- Warm golden glow behind family -->
+  <ellipse cx="400" cy="300" rx="220" ry="140" fill="url(#warmGlow)" filter="url(#softGlow)"/>
+
+  <!-- Large background shield watermark -->
+  <g opacity="0.04" transform="translate(400, 290)">
+    <path d="M-80-60l-60 50v70c0 55 35 100 60 115 25-15 60-60 60-115v-70l-60-50z" fill="url(#shieldGrad)"/>
+  </g>
+
+  <!-- ==== HOUSE / HOME ICON at top === -->
+  <g transform="translate(400, 52)" filter="url(#heroShadow)">
+    <!-- Home body -->
+    <rect x="-32" y="8" width="64" height="48" rx="4" fill="white" stroke="url(#accentGrad)" stroke-width="2.5"/>
+    <!-- Roof -->
+    <polygon points="0,-24 -42,12 -42,6 0,-30 42,6 42,12" fill="url(#accentGrad)"/>
+    <!-- Door -->
+    <rect x="-6" y="30" width="12" height="26" rx="2" fill="url(#goldGrad)" opacity="0.7"/>
+    <!-- Window -->
+    <rect x="-20" y="22" width="10" height="10" rx="1.5" fill="#2563eb" opacity="0.15"/>
+    <rect x="10" y="22" width="10" height="10" rx="1.5" fill="#2563eb" opacity="0.15"/>
+  </g>
+
+  <!-- ==== FAMILY GROUP ==== -->
+
+  <!-- Dad (left) -->
+  <g transform="translate(285, 175)">
+    <!-- Body - tailored suit -->
+    <path d="M-28 38c0-4 2-8 6-10l44-2c4 2 6 6 6 10v85c0 3-2 5-6 5h-44c-4 0-6-2-6-5V38z" fill="#1e3a5f"/>
+    <!-- Shoulder -->
+    <path d="M-28 38l-12 8v20" fill="#1a2a4a"/>
+    <!-- Head -->
+    <ellipse cx="0" cy="12" rx="26" ry="28" fill="#f5d6c6" stroke="none"/>
+    <!-- Hair - short professional -->
+    <path d="M-26 5c0-14 6-24 12-28 4-2 8-3 14-3 16 0 26 12 26 28 0 3-1 8-3 12" fill="#2d2d3a"/>
+    <!-- Face features -->
+    <ellipse cx="-8" cy="10" rx="2.5" ry="3" fill="#4a3728" opacity="0.6"/>
+    <ellipse cx="8" cy="10" rx="2.5" ry="3" fill="#4a3728" opacity="0.6"/>
+    <!-- Smile -->
+    <path d="M-6 20q6 8 12 0" stroke="#c4956a" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+    <!-- Arm around child -->
+    <path d="M28 55q32 8 44 45" stroke="#1e3a5f" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <!-- Hand on child shoulder -->
+    <ellipse cx="72" cy="95" rx="7" ry="9" fill="#f5d6c6"/>
+    <!-- Tie -->
+    <path d="M-3 36l6 18-6 4-6-4 6-18" fill="#2563eb" opacity="0.8"/>
+  </g>
+
+  <!-- Mom (right) -->
+  <g transform="translate(515, 175)">
+    <!-- Body - blouse/dress -->
+    <path d="M-24 38c0-4 3-8 7-10l34-2c4 2 7 6 7 10v85c0 3-3 5-7 5h-34c-4 0-7-2-7-5V38z" fill="#2563eb" opacity="0.75"/>
+    <!-- Head -->
+    <ellipse cx="0" cy="10" rx="24" ry="26" fill="#f0cdb8" stroke="none"/>
+    <!-- Hair - longer, styled -->
+    <path d="M-24 0c0-14 5-24 12-28 5-3 10-4 12-4 14 0 24 10 24 24 0 8-3 18-8 24-6 8-16 14-28 14s-12-6-12-12v-18z" fill="#3d2b1f"/>
+    <!-- Face features -->
+    <ellipse cx="-7" cy="8" rx="2.5" ry="3" fill="#4a3728" opacity="0.6"/>
+    <ellipse cx="7" cy="8" rx="2.5" ry="3" fill="#4a3728" opacity="0.6"/>
+    <!-- Smile -->
+    <path d="M-5 18q5 7 10 0" stroke="#c4956a" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+    <!-- Arm around child -->
+    <path d="M-24 55q-28 8-40 45" stroke="#2563eb" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.75"/>
+    <!-- Hand -->
+    <ellipse cx="-64" cy="95" rx="7" ry="9" fill="#f0cdb8"/>
+    <!-- Necklace dot -->
+    <circle cx="0" cy="30" r="1.5" fill="#fbbf24"/>
+    <circle cx="-3" cy="33" r="1.5" fill="#fbbf24"/>
+    <circle cx="3" cy="33" r="1.5" fill="#fbbf24"/>
+  </g>
+
+  <!-- Child (center, slightly lower) -->
+  <g transform="translate(400, 210)">
+    <!-- Body -->
+    <path d="M-18 24c0-3 2-6 5-7l26-1c3 1 5 4 5 7v52c0 3-2 5-5 5h-26c-3 0-5-2-5-5V24z" fill="#f59e0b" opacity="0.75"/>
+    <!-- Head -->
+    <ellipse cx="0" cy="5" rx="20" ry="22" fill="#f5d6c6"/>
+    <!-- Hair -->
+    <path d="M-20 0c0-11 4-19 10-22 3-2 7-3 10-3 12 0 20 10 20 22 0 3-1 6-3 8" fill="#4a3728"/>
+    <!-- Face -->
+    <ellipse cx="-5" cy="4" rx="2" ry="2.5" fill="#4a3728" opacity="0.5"/>
+    <ellipse cx="5" cy="4" rx="2" ry="2.5" fill="#4a3728" opacity="0.5"/>
+    <path d="M-4 12q4 5 8 0" stroke="#c4956a" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.3"/>
+  </g>
+
+  <!-- ==== DECORATIVE ELEMENTS ==== -->
+  <!-- Small floating gold dots / sparkles -->
+  <circle cx="80" cy="120" r="4" fill="url(#accentGrad)" opacity="0.12"/>
+  <circle cx="720" cy="100" r="3" fill="url(#accentGrad)" opacity="0.1"/>
+  <circle cx="120" cy="420" r="5" fill="url(#accentGrad)" opacity="0.08"/>
+  <circle cx="680" cy="400" r="4" fill="url(#accentGrad)" opacity="0.1"/>
+  <circle cx="60" cy="280" r="3" fill="url(#goldGrad)" opacity="0.1"/>
+  <circle cx="740" cy="300" r="3" fill="url(#goldGrad)" opacity="0.08"/>
+
+  <!-- Check marks (peace of mind) -->
+  <g transform="translate(100, 200)" opacity="0.12">
+    <path d="M0 6l6 6 14-14" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g transform="translate(670, 180)" opacity="0.12">
+    <path d="M0 6l6 6 14-14" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g transform="translate(140, 350)" opacity="0.08">
+    <path d="M0 5l5 5 12-12" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g transform="translate(650, 340)" opacity="0.08">
+    <path d="M0 5l5 5 12-12" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Bottom accent bar -->
+  <rect x="300" y="500" width="200" height="3" rx="1.5" fill="url(#accentGrad)" opacity="0.3"/>
+</svg>

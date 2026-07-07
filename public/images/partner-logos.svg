@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 50" fill="none">
+  <!-- Partner trust bar -->
+  <text x="10" y="20" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600" fill="#94A3B8" letter-spacing="1.5">CARRIER PARTNERS</text>
+  <line x1="10" y1="26" x2="590" y2="26" stroke="#E2E8F0" stroke-width="0.5"/>
+  <!-- Partner badges -->
+  <g transform="translate(0, 34)">
+    <!-- Prudential -->
+    <rect x="0" y="0" width="110" height="16" rx="8" fill="#F1F5F9"/>
+    <text x="55" y="11" font-family="'Inter', system-ui, sans-serif" font-size="8" font-weight="600" fill="#64748B" text-anchor="middle">Prudential</text>
+    <!-- Mutual of Omaha -->
+    <rect x="125" y="0" width="130" height="16" rx="8" fill="#F1F5F9"/>
+    <text x="190" y="11" font-family="'Inter', system-ui, sans-serif" font-size="8" font-weight="600" fill="#64748B" text-anchor="middle">Mutual of Omaha</text>
+    <!-- Pacific Life -->
+    <rect x="270" y="0" width="105" height="16" rx="8" fill="#F1F5F9"/>
+    <text x="322" y="11" font-family="'Inter', system-ui, sans-serif" font-size="8" font-weight="600" fill="#64748B" text-anchor="middle">Pacific Life</text>
+    <!-- Transamerica -->
+    <rect x="390" y="0" width="110" height="16" rx="8" fill="#F1F5F9"/>
+    <text x="445" y="11" font-family="'Inter', system-ui, sans-serif" font-size="8" font-weight="600" fill="#64748B" text-anchor="middle">Transamerica</text>
+    <!-- AIG -->
+    <rect x="515" y="0" width="75" height="16" rx="8" fill="#F1F5F9"/>
+    <text x="552" y="11" font-family="'Inter', system-ui, sans-serif" font-size="8" font-weight="600" fill="#64748B" text-anchor="middle">AIG</text>
+  </g>
+  <!-- Bottom line -->
+  <line x1="10" y1="48" x2="590" y2="48" stroke="#E2E8F0" stroke-width="0.5"/>
+</svg>
