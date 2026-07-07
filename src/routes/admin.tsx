@@ -128,7 +128,7 @@ function AdminPage() {
   const doLogin = (e: React.FormEvent) => {
     e.preventDefault();
     setLoginError("");
-    if (password === "insure2024") {
+    if (password === "insureleads2024") {
       sessionStorage.setItem("il_admin", "auth");
       setAuthed(true);
     } else {

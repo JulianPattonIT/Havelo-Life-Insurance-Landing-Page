@@ -126,377 +126,362 @@ function Home() {
   // ── SUCCESS VIEW ──
   if (step === "done") {
     return (
-      <main className="flex min-h-dvh flex-col items-center justify-center bg-gradient-to-br from-teal-50 via-white to-teal-50 px-6 text-center">
-        <div className="mx-auto max-w-lg">
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-success-light">
-            <svg className="h-8 w-8 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
+      <div className="havelo">
+        <main className="wrap" style={{ minHeight: "100dvh", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
+          <div style={{ maxWidth: 480 }}>
+            <div className="check" style={{ margin: "0 auto 20px", width: 48, height: 48, borderRadius: "50%", background: "var(--havelo-ink)", color: "var(--havelo-bg)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22 }}>✓</div>
+            <h2 style={{ fontSize: 30, marginBottom: 10 }}>Thank You!</h2>
+            <p style={{ fontSize: 15.5, color: "var(--havelo-ink-soft)", lineHeight: 1.6 }}>
+              Your information has been submitted successfully. A licensed insurance agent will reach out shortly with your free quote.
+            </p>
           </div>
-          <h2 className="mb-4 text-3xl font-bold text-neutral-900 sm:text-4xl">Thank You!</h2>
-          <p className="mb-6 text-lg leading-relaxed text-neutral-700">
-            Your information has been submitted successfully. A licensed insurance agent will reach out shortly with your free quote.
-          </p>
-          <p className="text-xs font-light text-neutral-500">
-            Your information is secure and will never be shared without permission.
-          </p>
-        </div>
-      </main>
+        </main>
+      </div>
     );
   }
 
   return (
-    <div className="min-h-dvh bg-white">
+    <div className="havelo">
       {/* ── Sticky Header ── */}
-      <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white/95 backdrop-blur-sm">
-        <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6">
-          <div className="flex items-center gap-3">
-            <img
-              src="/images/logo.svg"
-              alt="Havelo"
-              className="h-9"
-            />
+      <header>
+        <div className="wrap">
+          <div className="header-row">
+            <div className="logo">
+              <div className="logo-mark">H</div>
+              Havelo
+            </div>
+            <div className="header-note">Licensed & approved</div>
           </div>
-          {step === "zip" && (
-            <button
-              onClick={() => document.getElementById("zip-input")?.focus()}
-              className="rounded-full bg-teal-600 px-6 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-teal-700 hover:shadow-md"
-            >
-              Get My Free Quote
-            </button>
-          )}
         </div>
       </header>
 
-      {/* ── HERO ── */}
-      <section className="px-6 pb-16 pt-10 sm:pb-24 sm:pt-16">
-        <div className="mx-auto max-w-3xl text-center">
-          {/* Eyebrow badge */}
-          <div className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-teal-200 bg-teal-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal-700">
-            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            Free · No Obligation · 2 Minutes
-          </div>
+      {/* ── Hero Photo ── */}
+      <div className="hero-photo-full">
+        <img src="/images/consult.jpg" alt="Licensed insurance agent helping a client" />
+      </div>
 
-          {/* Headline */}
-          <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
-            Protection for the people{" "}
-            <span className="text-teal-600">who count on you</span>
-          </h1>
+      {/* ── Hero + Form Grid ── */}
+      <div className="wrap">
+        <div className="hero">
+          <div className="content-grid">
+            {/* Left: Intro */}
+            <div className="hero-intro">
+              <div className="eyebrow">Free · No Obligation · 2 Minutes</div>
+              <h1>Protection for the people who count on you</h1>
+              <p className="sub">
+                Get a free, no-pressure quote for final expense, term life, or annuity coverage — and talk it through with a licensed agent who'll actually explain your options.
+              </p>
+              <div className="trust-row">
+                <span className="trust-item">
+                  <span style={{ color: "var(--havelo-accent)", fontWeight: 700, marginRight: 4 }}>✓</span>
+                  Licensed agents only
+                </span>
+                <span className="trust-item">
+                  <span style={{ color: "var(--havelo-accent)", fontWeight: 700, marginRight: 4 }}>✓</span>
+                  Your info is never sold
+                </span>
+                <span className="trust-item">
+                  <span style={{ color: "var(--havelo-accent)", fontWeight: 700, marginRight: 4 }}>✓</span>
+                  No cost, no obligation
+                </span>
+                <span className="trust-item">
+                  <span style={{ color: "var(--havelo-accent)", fontWeight: 700, marginRight: 4 }}>✓</span>
+                  We'll call within 24 hours
+                </span>
+              </div>
+            </div>
 
-          {/* Subheadline */}
-          <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-neutral-700">
-            Get a free, no-pressure quote for final expense, term life, or annuity coverage — and talk it through with a licensed agent who'll actually explain your options.
-          </p>
-
-          {/* Trust row */}
-          <div className="mb-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-600">
-            <div className="flex items-center gap-1.5">
-              <svg className="h-4 w-4 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span>Licensed agents only</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <svg className="h-4 w-4 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span>Your info is never sold</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <svg className="h-4 w-4 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span>No cost, no obligation</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <svg className="h-4 w-4 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span>We'll call within 24 hours</span>
-            </div>
-          </div>
-
-          {/* ── Step 1: ZIP Form ── */}
-          {step === "zip" && (
-            <>
-              <form onSubmit={handleZipSubmit} className="mx-auto flex max-w-md flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                <input
-                  id="zip-input"
-                  type="text"
-                  value={zipCode}
-                  onChange={(e) => { setZipCode(e.target.value); setZipError(""); }}
-                  placeholder="Enter ZIP Code"
-                  maxLength={5}
-                  className="h-12 w-44 rounded-full border-2 border-teal-600 px-5 text-center text-base font-medium text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
-                />
-                <button
-                  type="submit"
-                  className="h-12 rounded-full bg-teal-600 px-8 text-base font-bold text-white shadow-md transition-all hover:bg-teal-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:ring-offset-2"
-                >
-                  Get My Free Quote →
-                </button>
-              </form>
-              {zipError && (
-                <p className="mt-3 text-sm text-error">{zipError}</p>
+            {/* Right: Form Card */}
+            <div>
+              {/* Step 1: ZIP Input */}
+              {step === "zip" && (
+                <div className="form-card">
+                  <h2>Get your free quote</h2>
+                  <p className="form-sub">Enter your ZIP code to check availability in your area.</p>
+                  <form onSubmit={handleZipSubmit}>
+                    <div className="field">
+                      <label htmlFor="zip-input">Your ZIP Code</label>
+                      <input
+                        id="zip-input"
+                        type="text"
+                        value={zipCode}
+                        onChange={(e) => { setZipCode(e.target.value); setZipError(""); }}
+                        placeholder="e.g. 12345"
+                        maxLength={5}
+                      />
+                      {zipError && <p style={{ color: "var(--havelo-accent)", fontSize: 12, marginTop: 6 }}>{zipError}</p>}
+                    </div>
+                    <button type="submit" className="submit-btn">Get My Free Quote →</button>
+                  </form>
+                </div>
               )}
 
-              {/* Social Proof */}
-              <div className="mt-8 flex flex-col items-center gap-3">
-                <div className="flex items-center gap-2 text-sm text-neutral-600">
-                  <span className="font-semibold text-neutral-900">Jay</span>
-                  <span className="text-neutral-300">•</span>
-                  <span>$500K policy for <span className="font-bold text-teal-600">$19/month</span></span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="flex text-gold-500">★★★★★</div>
-                  <span className="text-sm font-medium text-neutral-600">
-                    Rated <strong className="text-neutral-900">4.5</strong> / 5 • <strong className="text-neutral-900">11,971</strong> reviews
-                  </span>
-                </div>
-              </div>
-            </>
-          )}
-
-          {/* ── Step 2: Full Form ── */}
-          {step === "form" && (
-            <div className="mx-auto max-w-xl">
-              <div className="mb-6 rounded-2xl bg-white shadow-xl ring-1 ring-neutral-200">
-                <div className="border-b border-neutral-200 px-8 py-5">
-                  <p className="text-xs font-medium uppercase tracking-wider text-teal-600">ZIP {zipCode}</p>
-                  <h2 className="text-xl font-bold text-neutral-900">Get your free quote</h2>
-                  <p className="mt-0.5 text-sm text-neutral-600">
+              {/* Step 2: Full Form */}
+              {step === "form" && (
+                <div className="form-card">
+                  <h2>Get your free quote</h2>
+                  <p className="form-sub">
                     Answer a few quick questions and a licensed agent will reach out to walk you through your options — no pressure, no commitment.
                   </p>
-                </div>
-
-                {serverError && (
-                  <div className="mx-8 mt-6 rounded-lg bg-error-light px-4 py-3 text-sm text-error">{serverError}</div>
-                )}
-
-                <form onSubmit={handleSubmit} className="space-y-5 px-8 py-6" noValidate>
-                  {/* Name */}
-                  <div className="text-left">
-                    <label htmlFor="full_name" className="mb-1.5 block text-sm font-medium text-neutral-700">
-                      Full Name <span className="text-error">*</span>
-                    </label>
-                    <input type="text" id="full_name" value={formData.full_name}
-                      onChange={(e) => updateField("full_name", e.target.value)}
-                      className={`block w-full rounded-lg border px-4 py-2.5 text-neutral-900 shadow-sm placeholder:text-neutral-500 focus:border-teal-600 focus:ring-2 focus:ring-teal-500/30 ${errors.full_name ? "border-error" : "border-neutral-400"}`}
-                      placeholder="John Doe" />
-                    {errors.full_name && <p className="mt-1 text-sm text-error text-left">{errors.full_name}</p>}
-                  </div>
-
-                  {/* Phone & Email */}
-                  <div className="grid grid-cols-1 gap-5 text-left sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-neutral-700">
-                        Phone <span className="text-error">*</span>
-                      </label>
-                      <input type="tel" id="phone" value={formData.phone}
-                        onChange={(e) => updateField("phone", e.target.value)}
-                        className={`block w-full rounded-lg border px-4 py-2.5 text-neutral-900 shadow-sm placeholder:text-neutral-500 focus:border-teal-600 focus:ring-2 focus:ring-teal-500/30 ${errors.phone ? "border-error" : "border-neutral-400"}`}
-                        placeholder="(555) 123-4567" />
-                      {errors.phone && <p className="mt-1 text-sm text-error">{errors.phone}</p>}
+                  {serverError && (
+                    <div style={{ background: "var(--havelo-accent-soft)", padding: "10px 14px", borderRadius: 9, marginBottom: 14, fontSize: 13, color: "var(--havelo-accent)" }}>{serverError}</div>
+                  )}
+                  <form onSubmit={handleSubmit} noValidate>
+                    <div className="field">
+                      <label htmlFor="full_name">Full Name</label>
+                      <input type="text" id="full_name" value={formData.full_name}
+                        onChange={(e) => updateField("full_name", e.target.value)}
+                        placeholder="John Doe"
+                        style={{ borderColor: errors.full_name ? "var(--havelo-accent)" : undefined }} />
+                      {errors.full_name && <p className="error-msg">{errors.full_name}</p>}
                     </div>
-                    <div>
-                      <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-neutral-700">
-                        Email <span className="text-error">*</span>
-                      </label>
-                      <input type="email" id="email" value={formData.email}
-                        onChange={(e) => updateField("email", e.target.value)}
-                        className={`block w-full rounded-lg border px-4 py-2.5 text-neutral-900 shadow-sm placeholder:text-neutral-500 focus:border-teal-600 focus:ring-2 focus:ring-teal-500/30 ${errors.email ? "border-error" : "border-neutral-400"}`}
-                        placeholder="john@example.com" />
-                      {errors.email && <p className="mt-1 text-sm text-error">{errors.email}</p>}
+
+                    <div className="field-row">
+                      <div className="field">
+                        <label htmlFor="phone">Phone</label>
+                        <input type="tel" id="phone" value={formData.phone}
+                          onChange={(e) => updateField("phone", e.target.value)}
+                          placeholder="(555) 123-4567"
+                          style={{ borderColor: errors.phone ? "var(--havelo-accent)" : undefined }} />
+                        {errors.phone && <p className="error-msg">{errors.phone}</p>}
+                      </div>
+                      <div className="field">
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" value={formData.email}
+                          onChange={(e) => updateField("email", e.target.value)}
+                          placeholder="john@example.com"
+                          style={{ borderColor: errors.email ? "var(--havelo-accent)" : undefined }} />
+                        {errors.email && <p className="error-msg">{errors.email}</p>}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* DOB & ZIP */}
-                  <div className="grid grid-cols-1 gap-5 text-left sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="date_of_birth" className="mb-1.5 block text-sm font-medium text-neutral-700">
-                        Date of Birth <span className="text-error">*</span>
-                      </label>
-                      <input type="date" id="date_of_birth" value={formData.date_of_birth}
-                        onChange={(e) => updateField("date_of_birth", e.target.value)}
-                        className={`block w-full rounded-lg border px-4 py-2.5 text-neutral-900 shadow-sm focus:border-teal-600 focus:ring-2 focus:ring-teal-500/30 ${errors.date_of_birth ? "border-error" : "border-neutral-400"}`} />
-                      {errors.date_of_birth && <p className="mt-1 text-sm text-error">{errors.date_of_birth}</p>}
+                    <div className="field-row">
+                      <div className="field">
+                        <label htmlFor="date_of_birth">Date of Birth</label>
+                        <input type="date" id="date_of_birth" value={formData.date_of_birth}
+                          onChange={(e) => updateField("date_of_birth", e.target.value)}
+                          style={{ borderColor: errors.date_of_birth ? "var(--havelo-accent)" : undefined }} />
+                        {errors.date_of_birth && <p className="error-msg">{errors.date_of_birth}</p>}
+                      </div>
+                      <div className="field">
+                        <label>ZIP Code</label>
+                        <input type="text" value={zipCode} disabled style={{ opacity: 0.6 }} />
+                      </div>
                     </div>
-                    <div>
-                      <label className="mb-1.5 block text-sm font-medium text-neutral-700">ZIP Code</label>
-                      <input type="text" value={zipCode} disabled
-                        className="block w-full rounded-lg border border-neutral-300 bg-neutral-50 px-4 py-2.5 text-neutral-500" />
+
+                    <div className="field">
+                      <label htmlFor="product_interest">Product Interest</label>
+                      <select id="product_interest" value={formData.product_interest}
+                        onChange={(e) => updateField("product_interest", e.target.value)}
+                        style={{ borderColor: errors.product_interest ? "var(--havelo-accent)" : undefined }}>
+                        <option value="">Select a product...</option>
+                        <option value="Final Expense">Final Expense</option>
+                        <option value="Term Life">Term Life</option>
+                        <option value="Annuity">Annuity</option>
+                        <option value="Not Sure / Show Me Everything">Not Sure / Show Me Everything</option>
+                      </select>
+                      {errors.product_interest && <p className="error-msg">{errors.product_interest}</p>}
                     </div>
-                  </div>
 
-                  {/* Product Interest */}
-                  <div className="text-left">
-                    <label htmlFor="product_interest" className="mb-1.5 block text-sm font-medium text-neutral-700">
-                      Product Interest <span className="text-error">*</span>
-                    </label>
-                    <select id="product_interest" value={formData.product_interest}
-                      onChange={(e) => updateField("product_interest", e.target.value)}
-                      className={`block w-full rounded-lg border px-4 py-2.5 text-neutral-900 shadow-sm focus:border-teal-600 focus:ring-2 focus:ring-teal-500/30 ${errors.product_interest ? "border-error" : "border-neutral-400"}`}>
-                      <option value="">Select a product...</option>
-                      <option value="Final Expense">Final Expense</option>
-                      <option value="Term Life">Term Life</option>
-                      <option value="Annuity">Annuity</option>
-                      <option value="Not Sure / Show Me Everything">Not Sure / Show Me Everything</option>
-                    </select>
-                    {errors.product_interest && <p className="mt-1 text-sm text-error">{errors.product_interest}</p>}
-                  </div>
+                    <div className="field">
+                      <label htmlFor="coverage_amount">Desired Coverage</label>
+                      <select id="coverage_amount" value={formData.coverage_amount}
+                        onChange={(e) => updateField("coverage_amount", e.target.value)}
+                        style={{ borderColor: errors.coverage_amount ? "var(--havelo-accent)" : undefined }}>
+                        <option value="">Select coverage...</option>
+                        <option value="$5,000 – $10,000">$5,000 – $10,000</option>
+                        <option value="$10,000 – $25,000">$10,000 – $25,000</option>
+                        <option value="$25,000 – $50,000">$25,000 – $50,000</option>
+                        <option value="$50,000 – $100,000">$50,000 – $100,000</option>
+                        <option value="$100,000+">$100,000+</option>
+                        <option value="Not Sure">Not Sure</option>
+                      </select>
+                      {errors.coverage_amount && <p className="error-msg">{errors.coverage_amount}</p>}
+                    </div>
 
-                  {/* Coverage */}
-                  <div className="text-left">
-                    <label htmlFor="coverage_amount" className="mb-1.5 block text-sm font-medium text-neutral-700">
-                      Desired Coverage <span className="text-error">*</span>
-                    </label>
-                    <select id="coverage_amount" value={formData.coverage_amount}
-                      onChange={(e) => updateField("coverage_amount", e.target.value)}
-                      className={`block w-full rounded-lg border px-4 py-2.5 text-neutral-900 shadow-sm focus:border-teal-600 focus:ring-2 focus:ring-teal-500/30 ${errors.coverage_amount ? "border-error" : "border-neutral-400"}`}>
-                      <option value="">Select coverage...</option>
-                      <option value="$5,000 – $10,000">$5,000 – $10,000</option>
-                      <option value="$10,000 – $25,000">$10,000 – $25,000</option>
-                      <option value="$25,000 – $50,000">$25,000 – $50,000</option>
-                      <option value="$50,000 – $100,000">$50,000 – $100,000</option>
-                      <option value="$100,000+">$100,000+</option>
-                      <option value="Not Sure">Not Sure</option>
-                    </select>
-                    {errors.coverage_amount && <p className="mt-1 text-sm text-error">{errors.coverage_amount}</p>}
-                  </div>
-
-                  {/* Submit */}
-                  <div className="space-y-3">
-                    {/* TCPA Consent */}
-                    <div className="flex items-start gap-3">
-                      <input
-                        type="checkbox"
-                        id="tcpa_consent"
-                        checked={formData.tcpa_consent}
-                        onChange={(e) => updateField("tcpa_consent", e.target.checked)}
-                        className="mt-1 h-4 w-4 rounded border-neutral-400 text-teal-600 focus:ring-teal-500"
-                      />
-                      <label htmlFor="tcpa_consent" className="text-xs leading-relaxed text-neutral-600">
+                    <div className="consent">
+                      <input type="checkbox" id="tcpa_consent" checked={formData.tcpa_consent}
+                        onChange={(e) => updateField("tcpa_consent", e.target.checked)} />
+                      <label htmlFor="tcpa_consent">
                         By checking this box and submitting this form, I agree that Havelo and its licensed insurance partner may contact me at the phone number and email provided — by call, text/SMS, or email, including by automated dialing technology or prerecorded message — to discuss insurance products and provide a quote. I understand consent is not required to purchase any product or service, message/data rates may apply, and I can opt out at any time by replying STOP to any text or calling to request removal.
                       </label>
                     </div>
-                    {errors.tcpa_consent && (
-                      <p className="text-sm text-error text-left">{errors.tcpa_consent}</p>
-                    )}
+                    {errors.tcpa_consent && <p className="error-msg" style={{ marginTop: 4 }}>{errors.tcpa_consent}</p>}
 
-                    <button type="submit" disabled={submitting}
-                      className="w-full rounded-full bg-teal-600 px-8 py-3 text-base font-bold text-white shadow-md transition-all hover:bg-teal-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60">
+                    <button type="submit" className="submit-btn" disabled={submitting}>
                       {submitting ? "Submitting..." : "Get My Free Quote →"}
                     </button>
 
-                    <p className="text-center text-xs font-light text-neutral-500">
-                      Your information is secure and will never be shared without permission.
-                    </p>
-                  </div>
-                </form>
-              </div>
+                    <div className="form-badges">
+                      <span>🔒 Secure & confidential</span>
+                      <span>✓ Licensed agents only</span>
+                      <span>✓ No spam, ever</span>
+                    </div>
+                  </form>
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
-      </section>
+      </div>
 
-      {/* ── Trust Badges Under Form ── */}
-      {step === "form" && (
-        <section className="border-t border-neutral-200 bg-neutral-50 py-8">
-          <div className="mx-auto max-w-[1200px] px-6">
-            <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-neutral-600">
-              <div className="flex items-center gap-2">
-                <svg className="h-5 w-5 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-                </svg>
-                <span>Secure & confidential</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="h-5 w-5 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span>Licensed agents only</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="h-5 w-5 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>We'll never sell your info</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="h-5 w-5 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span>No spam, ever</span>
+      {/* ── Why Havelo ── */}
+      <div className="wrap">
+        <div className="why">
+          <div className="why-grid">
+            <div className="why-photo">
+              <img src="/images/secondary.jpg" alt="Family peace of mind" />
+            </div>
+            <div>
+              <div className="eyebrow">Why Havelo</div>
+              <h2 style={{ fontSize: "clamp(24px,4vw,34px)", marginBottom: 6 }}>
+                Real coverage from people who know the ropes
+              </h2>
+              <p style={{ fontSize: 14.5, color: "var(--havelo-ink-soft)", margin: 0 }}>
+                We don't do call centers or bots — just real, licensed agents who'll help you find the right fit.
+              </p>
+              <div className="why-points">
+                <div className="why-point">
+                  <div className="check">✓</div>
+                  <div>
+                    <h3>Licensed agents, not robots</h3>
+                    <p>Every quote comes from a real person licensed in your state — no automated call centers, no bots.</p>
+                  </div>
+                </div>
+                <div className="why-point">
+                  <div className="check">✓</div>
+                  <div>
+                    <h3>Your information stays yours</h3>
+                    <p>We never sell your data. Your info is only shared with the licensed agent helping you — and no one else.</p>
+                  </div>
+                </div>
+                <div className="why-point">
+                  <div className="check">✓</div>
+                  <div>
+                    <h3>No pressure, no hurry</h3>
+                    <p>The whole point is to help you understand your options. Ask questions, take your time — there's zero obligation.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </section>
-      )}
+        </div>
+      </div>
 
       {/* ── How It Works ── */}
-      <section className="bg-white px-6 py-16 sm:py-20">
-        <div className="mx-auto max-w-[1200px]">
-          <h2 className="mb-4 text-center text-3xl font-bold text-neutral-900 sm:text-4xl">How it works</h2>
-          <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-neutral-700">
-            Getting a quote takes less time than filling out a coffee order.
-          </p>
-          <div className="grid gap-8 sm:grid-cols-3">
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-teal-600 text-xl font-bold text-white">1</div>
-              <h3 className="mb-2 text-xl font-bold text-neutral-900">Tell us a bit about you</h3>
-              <p className="text-neutral-700">A couple quick questions about the coverage you're thinking about — takes about two minutes.</p>
+      <div className="wrap">
+        <div className="how">
+          <div className="section-head">
+            <div className="eyebrow">Simple process</div>
+            <h2>Getting a quote takes less time than filling out a coffee order</h2>
+          </div>
+          <div className="steps">
+            <div className="step">
+              <div className="step-num">1</div>
+              <h3>Tell us a bit about you</h3>
+              <p>A couple quick questions about the coverage you're thinking about — takes about two minutes.</p>
             </div>
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-teal-600 text-xl font-bold text-white">2</div>
-              <h3 className="mb-2 text-xl font-bold text-neutral-900">We match you with a licensed agent</h3>
-              <p className="text-neutral-700">No call centers, no bots — a real licensed agent who works in your state.</p>
+            <div className="step">
+              <div className="step-num">2</div>
+              <h3>We match you with a licensed agent</h3>
+              <p>No call centers, no bots — a real licensed agent who works in your state.</p>
             </div>
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-teal-600 text-xl font-bold text-white">3</div>
-              <h3 className="mb-2 text-xl font-bold text-neutral-900">Get your quote, on your terms</h3>
-              <p className="text-neutral-700">Talk it through, ask questions, and decide what's right for you. No pressure, ever.</p>
+            <div className="step">
+              <div className="step-num">3</div>
+              <h3>Get your quote, on your terms</h3>
+              <p>Talk it through, ask questions, and decide what's right for you. No pressure, ever.</p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* ── Footer CTA ── */}
-      <section className="border-t border-neutral-200 bg-teal-50 px-6 py-12">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="mb-4 text-3xl font-bold text-neutral-900">We do the shopping. You do the closing.</h2>
-          <p className="mb-8 text-lg text-neutral-700">Ready to see what you could save? It only takes two minutes.</p>
-          {step === "zip" && (
-            <button
-              onClick={() => document.getElementById("zip-input")?.focus()}
-              className="rounded-full bg-teal-600 px-8 py-3 text-base font-bold text-white shadow-md transition-all hover:bg-teal-700 hover:shadow-lg"
-            >
-              Get My Free Quote →
-            </button>
-          )}
+      {/* ── Products ── */}
+      <div className="wrap">
+        <div className="products">
+          <img src="/images/trust.jpg" alt="Coverage you can trust" />
+          <div>
+            <div className="eyebrow">Coverage types</div>
+            <h2 style={{ fontSize: "clamp(24px,4vw,34px)", marginBottom: 6 }}>We help you find the right fit</h2>
+            <p style={{ fontSize: 14.5, color: "var(--havelo-ink-soft)", margin: 0 }}>
+              Whether you're planning ahead, protecting your family, or looking for retirement income — we've got you covered.
+            </p>
+            <div className="product-list">
+              <div className="product-pill">
+                <div className="dot" />
+                Final Expense — coverage for end-of-life costs
+              </div>
+              <div className="product-pill">
+                <div className="dot" />
+                Term Life — affordable protection for a set period
+              </div>
+              <div className="product-pill">
+                <div className="dot" />
+                Annuity — guaranteed income for retirement
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+
+      {/* ── Licensing ── */}
+      <div className="wrap">
+        <div className="licensing">
+          <p>Licensed agents available in all 50 states</p>
+          <div className="state-row">
+            <span className="state-pill">TX</span>
+            <span className="state-pill">FL</span>
+            <span className="state-pill">CA</span>
+            <span className="state-pill">NY</span>
+            <span className="state-pill">OH</span>
+            <span className="state-pill">PA</span>
+            <span className="state-pill">GA</span>
+            <span className="state-pill">NC</span>
+            <span className="state-pill">IL</span>
+            <span className="state-pill">MI</span>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Final CTA ── */}
+      <div className="wrap">
+        <div className="final-cta">
+          <div className="cta-box">
+            <h2>We do the shopping. You do the closing.</h2>
+            <p>Ready to see what you could save? It only takes two minutes — and there's absolutely no obligation.</p>
+            {step === "zip" && (
+              <button
+                onClick={() => document.getElementById("zip-input")?.focus()}
+                className="submit-btn"
+                style={{ display: "block" }}
+              >
+                Get My Free Quote →
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-neutral-200 bg-navy-900 px-6 py-12">
-        <div className="mx-auto max-w-[800px] text-center">
-          <div className="mb-4 flex items-center justify-center gap-2">
-            <img src="/images/logo.svg" alt="Havelo" className="h-7 brightness-0 invert" />
+      <footer>
+        <div className="wrap">
+          <div className="foot-top">
+            <div className="logo" style={{ fontSize: 15 }}>
+              <div className="logo-mark" style={{ width: 22, height: 22, fontSize: 10 }}>H</div>
+              Havelo
+            </div>
+            <div className="foot-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
           </div>
-          <p className="mx-auto mb-6 max-w-xl text-xs leading-relaxed text-navy-300">
-            Havelo connects you with a licensed insurance agent to help you find coverage that fits your life. Submitting this form doesn't guarantee approval or coverage — it starts a conversation with a real, licensed agent.
-          </p>
-          <div className="mb-4 flex items-center justify-center gap-4 text-xs text-navy-300">
-            <a href="#" className="hover:text-white">Privacy Policy</a>
-            <span>·</span>
-            <a href="#" className="hover:text-white">Terms of Service</a>
-          </div>
-          <p className="text-xs text-navy-400">
-            &copy; {new Date().getFullYear()} Havelo. All rights reserved.
-          </p>
+          <p>Havelo connects you with a licensed insurance agent to help you find coverage that fits your life. Submitting this form doesn't guarantee approval or coverage — it starts a conversation with a real, licensed agent.</p>
+          <p style={{ marginTop: 12 }}>&copy; {new Date().getFullYear()} Havelo. All rights reserved.</p>
         </div>
       </footer>
+
+      <style>{`
+        .error-msg { color: var(--havelo-accent); font-size: 12px; margin-top: 4px; }
+      `}</style>
     </div>
   );
 }
